@@ -21,7 +21,10 @@ See https://mikefarah.gitbook.io/yq/ for detailed documentation and examples.`,
 cat myfile.yml | yq '.stuff' 
 
 # update myfile.yml in place
-yq -i '.stuff = "foo"' myfile.yml # update myfile.yml inplace
+yq -i '.stuff = "foo"' myfile.yml
+
+# print idiomatic YAML styling
+yq -P '.' sample.json
 `,
 
 		RunE: func(cmd *cobra.Command, args []string) error {
